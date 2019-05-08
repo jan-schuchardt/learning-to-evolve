@@ -1,0 +1,64 @@
+{
+    "hyper_params": {
+        "learning_rate_actor": 1e-4,
+        "batch_size": 250,
+        "num_hidden_layers": 3,
+        "num_neurons": 64,
+        "discount_factor": 0.99,
+        "variance_bias_factor": 0.99,
+        "clipping_value": 0.2,
+        "num_actors": 4,
+        "num_training_epochs": 4,
+        "dim_elimination_max_pooling": true,
+        "entropy_factor": 0.001,
+        "entropy_factor_decay": 0,
+        "min_entropy_factor": 0.001,
+        "value_loss_factor": 0.5
+    },
+    "general": {
+        "problem_type": "knapsack",
+        "num_problem_dimensions": 40,
+        "num_generations": 200,
+        "population_size": 10
+    },
+    "training": {
+        "output_folder": "/home/jan/test/testruns",
+        "training_problems": "/home/jan/test/problems.json",
+        "num_training_problems": 1,
+        "num_training_sessions": 3,
+        "num_iterations": 1001,
+        "weight_store_iterations": 1,
+        "train": true,
+        "train_per_generation": false
+    },
+    "validation": {
+        "validation_problems": "/home/jan/test/problems.json",
+        "validation_output_folder": "",
+        "weight_load_iterations": 200,
+        "num_runs": 100,
+        "validate": true
+    },
+    "parent_selection": {
+        "strategy": "ppo",
+        "percentage": 0.75
+    },
+    "parent_pairing": {
+        "strategy": "tournament"
+    },
+    "crossover": {
+        "strategy": "uniform",
+        "crossover_rate": 0.9
+    },
+    "mutation": {
+        "strategy": "binary_random",
+        "mutation_rate": 0.01,
+        "initial_step_size": 1,
+        "minimum_step_size": 1e-5,
+        "learning_parameter_evolutionary_strategy_1": 0.5,
+        "learning_parameter_evolutionary_strategy_2": 0.6
+    },
+    "survivor_selection": {
+        "strategy": "replacing",
+        "elite_size": 0
+    }
+}
