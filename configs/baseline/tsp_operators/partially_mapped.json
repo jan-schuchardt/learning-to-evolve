@@ -1,0 +1,81 @@
+{
+    "hyper_params": {
+        "learning_rate_actor": 1e-4,
+        "learning_rate_critic": 1e-4,
+        "batch_size": 400,
+        "num_hidden_layers": 3,
+        "num_neurons": 64,
+        "discount_factor": 0.99,
+        "target_tracking_rate": 1,
+        "variance_bias_factor": 0.99,
+        "negative_bias": false,
+        "clipping_value": 0.2,
+        "num_actors": 2,
+        "num_training_epochs": 8,
+        "experience_store_length": 100000,
+        "exploration_rate": 1,
+        "min_exploration_rate": 0,
+        "exploration_rate_decay": 1e-3,
+        "exploration_mean": 0,
+        "exploration_mean_reversion": 0.9,
+        "exploration_scale": 10,
+        "exploration_uniform": true,
+        "use_input_norm": false,
+        "dim_elimination_max_pooling": true,
+        "entropy_factor": 0.01,
+        "entropy_factor_decay": 0,
+        "min_entropy_factor": 0.01,
+        "value_loss_factor": 0.5
+    },
+    "general": {
+        "problem_type": "travelling_salesman",
+        "num_problem_dimensions": 20,
+        "num_generations": 100,
+        "population_size": 10
+    },
+    "training": {
+        "output_folder": "/path/to/learning-to-evolve/configs/baseline/tsp_operators/evaluation_partially_mapped",
+        "training_problems": "/path/to/learning-to-evolve/data/problems/tsp/training.json",
+        "num_training_problems": 40,
+        "num_training_sessions": 1,
+        "num_iterations": 501,
+        "weight_store_iterations": 25,
+        "train": false,
+        "train_per_generation": false
+    },
+    "validation": {
+        "validation_problems": "/path/to/learning-to-evolve/data/problems/tsp/validation.json",
+        "validation_output_folder": "",
+        "weight_load_iterations": 50000,
+        "num_runs": 100,
+        "validate": true
+    },
+    "parent_selection": {
+        "strategy": "ranked",
+        "percentage": 1,
+        "distribution_type": "beta"
+    },
+    "parent_pairing": {
+        "strategy": "tournament"
+    },
+    "crossover": {
+        "strategy": "partially_mapped",
+        "crossover_rate": 1
+    },
+    "mutation": {
+        "strategy": "inversion",
+        "mutation_rate": 0.01,
+        "initial_step_size": 1,
+        "minimum_step_size": 1e-5,
+        "learning_rate_evolutionary_strategy_1": 0.5,
+        "learning_rate_evolutionary_strategy_2": 0.6,
+        "distribution_type": "beta",
+        "fixed_std_deviation": -1,
+        "sigmoid_scale": 0.1
+    },
+    "survivor_selection": {
+        "strategy": "replacing",
+        "elite_size": 1,
+        "distribution_type": "beta"
+    }
+}

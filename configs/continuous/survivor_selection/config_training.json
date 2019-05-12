@@ -1,0 +1,64 @@
+{
+    "hyper_params": {
+        "learning_rate_actor": 1e-4,
+        "batch_size": 800,
+        "num_hidden_layers": 3,
+        "num_neurons": 64,
+        "discount_factor": 0.99,
+        "variance_bias_factor": 0.99,
+        "clipping_value": 0.2,
+        "num_actors": 4,
+        "num_training_epochs": 8,
+        "dim_elimination_max_pooling": true,
+        "entropy_factor": 0.0001,
+        "entropy_factor_decay": 0,
+        "min_entropy_factor": 0.0001,
+        "value_loss_factor": 0.5
+    },
+    "general": {
+        "problem_type": "continuous",
+        "num_problem_dimensions": 2,
+        "num_generations": 100,
+        "population_size": 10
+    },
+    "training": {
+        "output_folder": "/path/to/learning-to-evolve/configs/continuous/survivor_selection/training",
+        "training_problems": "/path/to/learning-to-evolve/data/problems/continuous/training.json",
+        "num_training_problems": 16,
+        "num_training_sessions": 21,
+        "num_iterations": 501,
+        "weight_store_iterations": 25,
+        "train": true,
+        "train_per_generation": false
+    },
+    "validation": {
+        "validation_problems": "/path/to/learning-to-evolve/data/problems/continuous/validation.json",
+        "validation_output_folder": "",
+        "weight_load_iterations": 100,
+        "num_runs": 500,
+        "validate": true
+    },
+    "parent_selection": {
+        "strategy": "ranked",
+        "percentage": 0.5
+    },
+    "parent_pairing": {
+        "strategy": "tournament"
+    },
+    "crossover": {
+        "strategy": "uniform",
+        "crossover_rate": 0.9
+    },
+    "mutation": {
+        "strategy": "real_onestep",
+        "mutation_rate": 0.01,
+        "initial_step_size": 0.1,
+        "minimum_step_size": 1e-8,
+        "learning_parameter_evolutionary_strategy_1": 0.5,
+        "learning_parameter_evolutionary_strategy_2": 0.6
+    },
+    "survivor_selection": {
+        "strategy": "ppo",
+        "elite_size": 0
+    }
+}

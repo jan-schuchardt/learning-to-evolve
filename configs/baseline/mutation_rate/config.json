@@ -1,0 +1,81 @@
+{
+    "hyper_params": {
+        "learning_rate_actor": 1e-4,
+        "learning_rate_critic": 1e-4,
+        "batch_size": 800,
+        "num_hidden_layers": 3,
+        "num_neurons": 64,
+        "discount_factor": 0.99,
+        "target_tracking_rate": 1,
+        "variance_bias_factor": 0.99,
+        "negative_bias": false,
+        "clipping_value": 0.2,
+        "num_actors": 4,
+        "num_training_epochs": 4,
+        "experience_store_length": 100000,
+        "exploration_rate": 1,
+        "min_exploration_rate": 0,
+        "exploration_rate_decay": 1e-3,
+        "exploration_mean": 0,
+        "exploration_mean_reversion": 0.9,
+        "exploration_scale": 10,
+        "exploration_uniform": true,
+        "use_input_norm": false,
+        "dim_elimination_max_pooling": true,
+        "entropy_factor": 0.0001,
+        "entropy_factor_decay": 0,
+        "min_entropy_factor": 0.0001,
+        "value_loss_factor": 0.5
+    },
+    "general": {
+        "problem_type": "knapsack",
+        "num_problem_dimensions": 40,
+        "num_generations": 100,
+        "population_size": 10
+    },
+    "training": {
+        "output_folder": "/path/to/learning-to-evolve/configs/baseline/mutation_rate/evaluation",
+        "training_problems": "/path/to/learning-to-evolve/data/problems/knapsack/training.json",
+        "num_training_problems": 20,
+        "num_training_sessions": 1,
+        "num_iterations": 501,
+        "weight_store_iterations": 25,
+        "train": false,
+        "train_per_generation": false
+    },
+    "validation": {
+        "validation_problems": "/path/to/learning-to-evolve/data/problems/knapsack/validation.json",
+        "validation_output_folder": "",
+        "weight_load_iterations": 100000,
+        "num_runs": 100,
+        "validate": true
+    },
+    "parent_selection": {
+        "strategy": "ranked",
+        "percentage": 1,
+        "distribution_type": "beta"
+    },
+    "parent_pairing": {
+        "strategy": "tournament"
+    },
+    "crossover": {
+        "strategy": "uniform",
+        "crossover_rate": 0.9
+    },
+    "mutation": {
+        "strategy": "binary_random",
+        "mutation_rate": [0.005, 0.0051, 0.0052, 0.0053, 0.0054, 0.0055, 0.0056, 0.0057, 0.0058, 0.0059, 0.006, 0.0061, 0.0062, 0.0063, 0.0064, 0.0065, 0.0066, 0.0067, 0.0068, 0.0069, 0.007, 0.0071, 0.0072, 0.0073, 0.0074, 0.0075, 0.0076, 0.0077, 0.0078, 0.0079, 0.008, 0.0081, 0.0082, 0.0083, 0.0084, 0.0085, 0.0086, 0.0087, 0.0088, 0.0089, 0.009, 0.0091, 0.0092, 0.0093, 0.0094, 0.0095, 0.0096, 0.0097, 0.0098, 0.0099, 0.01, 0.0101, 0.0102, 0.0103, 0.0104, 0.0105, 0.0106, 0.0107, 0.0108, 0.0109, 0.011, 0.0111, 0.0112, 0.0113, 0.0114, 0.0115, 0.0116, 0.0117, 0.0118, 0.0119, 0.0120, 0.0121, 0.0122, 0.0123, 0.0124, 0.0125, 0.0126, 0.0127, 0.0128, 0.0129],
+        "initial_step_size": 1,
+        "minimum_step_size": 1e-5,
+        "learning_rate_evolutionary_strategy_1": 0.5,
+        "learning_rate_evolutionary_strategy_2": 0.6,
+        "distribution_type": "beta",
+        "fixed_std_deviation": -1,
+        "sigmoid_scale": 0.1
+    },
+    "survivor_selection": {
+        "strategy": "replacing",
+        "elite_size": 0,
+        "distribution_type": "beta"
+    }
+}

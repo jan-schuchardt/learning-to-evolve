@@ -1,4 +1,39 @@
-## Usage
+# Learning to Evolve
+
+This is the official implementation of the paper "Learning to Evolve" [[Arxiv]](https://arxiv.org/abs/1905.03389).
+
+## Prerequisites
+
+Python 3  
+CUDA  
+Numpy  
+Pytorch 0.41+
+
+## Examples
+
+We provide config files and pretrained weights for all performed experiments.  
+To run these scripts, first replace all placeholder directory names with the directory you cloned this project into.  
+
+```
+$ apt-get install rpl
+$ rpl -x .json -R "/path/to" "[ACTUAL_DIRECTORY]" ./configs 
+```
+
+To perform testing with pretrained weights, run the _apply\_solver_ script as follows
+
+```
+$ python apply_solver.py configs/path/to/method/config_validation_pretrained.json
+```
+
+If you want to train a model from scratch, run the _apply\_solver_ script as follows:
+
+```
+$ python apply_solver.py configs/path/to/method/config_training.json
+```
+
+An explanation of the config file parameters can be found in _readme/scripts/apply_solver.md_.
+
+## Scripts
 
 There are five relevant scripts. For details, consult the respective readme files under readme/ or use --help.
 
