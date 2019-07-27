@@ -26,6 +26,9 @@ class Problem(ABC):
     def evaluate(self, solution, fitness=True):
         """
         :parameter solution: The solution to evaluate
+        :parameter fitness:
+            If True, return the fitness value that is used by the evolutionary algorithm
+            If false, return a value for logging, e.g. unclipped function value
         :return: The fitness of the solution
         """
         pass

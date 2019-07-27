@@ -65,3 +65,7 @@ Generates a set of problem instances for the 0-1 knapsack problem and stores the
 
 * evaluation/generate_tsp.py [options] _output-file_  
 Generates a set of problem instances for the traveling salesman problem and stores them as a .json-file _output-file_, for later use by apply_solver.
+
+## Extending the code
+
+If you plan to add new problem instances or evolutionary operators, consult readme_developers.md under readme for an overview of the necessary steps.

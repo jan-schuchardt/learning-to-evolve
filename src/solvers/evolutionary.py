@@ -477,7 +477,12 @@ class EvolutionaryAlgorithm(ABC):
     def calc_reward(self, old_best_fitness, new_best_fitness):
         """
         Calculate the reward for an action, based on the change in best fitness
+
+        Currently does not support negative fitness values,
+        might not catch some edges with new problem types.
+        Change as necessary when adding new problem types!
         """
+
         if isinstance(self.problem, ContinuousFunction):
             return float(new_best_fitness - old_best_fitness)
         else:
